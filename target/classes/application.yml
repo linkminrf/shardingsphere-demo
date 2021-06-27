@@ -1,0 +1,47 @@
+#端口号
+server:
+  port: 8283
+
+
+#数据库连接
+spring:
+  shardingsphere:
+#    datasource:
+#      names: db0,db1
+#      db0:
+#          driver-class-name: com.mysql.jdbc.Driver
+#          jdbc-url: jdbc:mysql://localhost:3306/shard_order_0?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false
+#          username: root
+#          password: 123456
+#      db1:
+#          driver-class-name: com.mysql.jdbc.Driver
+#          jdbc-url: jdbc:mysql://localhost:3306/shard_order_1?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false
+#          username: root
+#          password: 123456
+    props:
+      sql:
+         show: true  #打印sql
+#    sharding:
+#      tables:
+#        orders:
+#          actualDataNodes: shard_order_$->{0..1}.orders_$->{0..1}
+#          databaseStrategy:
+#            inline:
+#              shardingColumn:  adddate
+#          tableStrategy:
+#              inline:
+#                shardingColumn: id
+#        orders_detail:
+#          actualDataNodes: shard_order_$->{0..1}.orders_detail_$->{0..1}
+#          tableStrategy:
+#            inline:
+#              shardingColumn: orders_id
+  devtools:
+    restart:
+      enabled: false
+
+
+
+
+
+
